@@ -1,5 +1,5 @@
 import models.Show;
-import models.Tag;
+import models.enums.Tag;
 import org.junit.Before;
 import org.junit.Test;
 
