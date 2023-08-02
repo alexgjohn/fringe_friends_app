@@ -2,18 +2,34 @@ package models;
 
 import models.enums.Tag;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+@Entity
+@Table(name = "friends")
 public class Friend {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+
+    @Column(name = "name")
     private String name;
 
+    @Column(name = "age")
     private int age;
 
+    @Column(name = "available_dates")
     private ArrayList<LocalDate> availableDates;
 
+    @Column(name = "preferences")
     private ArrayList<Tag> preferences;
+
+
+    public Friend() {
+    }
 
     public Friend(String name, int age) {
         this.name = name;

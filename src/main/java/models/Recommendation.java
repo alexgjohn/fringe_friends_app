@@ -1,13 +1,31 @@
 package models;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+@Entity
+@Table(name = "recommendations")
 public class Recommendation {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "show_id", nullable = false)
     private Show show;
+
+    @ManyToOne
+    @JoinColumn(name = "friend_id", nullable = false)
     private Friend friend;
+
+    @Column(name = "possible_dates")
     private ArrayList<LocalDate> possibleDates;
+
+    public Recommendation() {
+    }
 
     public Recommendation(Show show, Friend friend) {
         this.show = show;
