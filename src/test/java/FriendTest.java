@@ -1,4 +1,5 @@
 import models.Friend;
+import models.enums.Tag;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -50,5 +51,11 @@ public class FriendTest {
     @Test
     public void hasEmptyListOfPreferences(){
         assertEquals(0, friend1.getPreferences().size());
+    }
+
+    @Test
+    public void canAddPreferences(){
+        friend1.addPreference(Tag.HORROR);
+        friend1.addPreference(Tag.ADULT);
     }
 }

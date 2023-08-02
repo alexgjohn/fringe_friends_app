@@ -61,4 +61,8 @@ public class Friend {
     public void removeAvailableDate(LocalDate dateToRemove) {
         this.availableDates.remove(dateToRemove);
     }
+
+    public void addPreference(Tag tagToAdd) {
+        this.preferences.add(tagToAdd);
+    }
 }
